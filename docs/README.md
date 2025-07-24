@@ -1,23 +1,32 @@
-# Dokümantasyon Rehberi
+# Robodict AI Test - Documentation
 
-Bu klasördeki dosyalar:
+Bu klasör, Robodict projesi için tüm dokümantasyonu içerir.
 
-## 📁 Dosya Yapısı
+## 📁 Klasör Yapısı
 
-```
-docs/
-├── ai-sessions.md      # AI chat geçmişi ve session notları
-├── project-notes.md    # Proje kararları ve teknik notlar
-├── README.md          # Bu dosya - dokümantasyon rehberi
-└── decisions/         # Önemli kararlar için ayrı dosyalar (gelecekte)
-```
+### development/
+Geliştirme süreci ile ilgili teknik dokümanlar:
+- `ai-sessions.md` - AI oturumları kayıtları
+- `communication-rules.md` - AI asistan ile çalışma kuralları
+- `development-tracker.md` - Aktif geliştirme durumu takibi
+
+### project/
+İş gereksinimleri ve proje planı:
+- `project-requirements.md` - Proje gereksinimleri ve spesifikasyonlar  
+- `project-notes.md` - Genel proje notları ve kararlar
+
+## 📋 Dokümantasyon Standardı
+
+**Development docs** → Geliştiriciler ve AI için teknik context
+**Project docs** → Takım üyeleri ve stakeholder'lar için business context
 
 ## 🔄 Güncelleme Süreci
 
 ### Her AI Session Sonrası:
-1. `ai-sessions.md` dosyasını güncelleyin
-2. Önemli kararları `project-notes.md`'ye ekleyin
-3. Değişiklikleri commit edin
+1. `development/ai-sessions.md` dosyasını güncelleyin
+2. Önemli kararları `development/development-tracker.md`'ye ekleyin
+3. İş gereksinimlerinde değişiklik varsa `project/` klasörünü güncelleyin
+4. Değişiklikleri commit edin
 
 ### Commit Mesaj Formatı:
 ```
