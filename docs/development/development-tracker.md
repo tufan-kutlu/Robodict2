@@ -20,9 +20,10 @@
 - [ ] Database connection
 
 ### **Step 2: Database Design**
-- [ ] Migration files (Users, Personalities, Titles, Entries)
-- [ ] Model relationships
-- [ ] Seeders for test data
+- [ ] Migration files (Users, Writers, Personalities, Titles, Entries, Locales)
+- [ ] Model relationships with locale support
+- [ ] Seeders for test data (TR locale initially)
+- [ ] Role-based permissions schema
 
 ### **Step 3: Authentication Foundation**
 - [ ] Laravel Breeze/UI kurulumu
@@ -48,6 +49,10 @@
 - **Frontend**: Blade templates + Alpine.js
 - **Database**: MySQL/PostgreSQL
 - **Authentication**: Laravel Sanctum (API ready)
+- **Security**: Role-based access control + Multi-layer admin security
+- **Content Model**: Human-AI hybrid writers (future-proof)
+- **Localization**: Multi-locale support (start TR, expand globally)
+- **Architecture Principle**: Data-driven features (no code updates for new locales/writers)
 - **Hosting**: Shared hosting compatible
 - **Git Flow**: Explicit commands, no upstream tracking
 
