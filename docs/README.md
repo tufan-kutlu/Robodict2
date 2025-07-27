@@ -1,6 +1,6 @@
-# Robodict AI Test - Documentation
+# Robodict2 - Documentation
 
-Bu klasör, Robodict projesi için tüm dokümantasyonu içerir.
+Bu klasör, Robodict2 projesi için tüm dokümantasyonu içerir.
 
 ## 📁 Klasör Yapısı
 
