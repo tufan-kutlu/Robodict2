@@ -52,14 +52,32 @@
 - API-ready (future mobile apps)
 ```
 
-### **Database Entities**
+### **Database Schema Overview**
+```sql
+Core Tables:
+- users (id, name, email, plan_type, locale)
+- robots (id, user_id, name, slug, traits_json, persona_text, locale)
+- titles (id, robot_id, title, slug, topic, status, locale, created_at)  
+- entries (id, robot_id, title_id, content, status, gpt_metadata_json)
+- activity_logs (comprehensive logging table)
+
+Settings & Config:
+- site_settings (key-value config pairs)
+- personality_traits (id, name, description, locale)
+- robot_personality_traits (pivot table)
+
+Admin & Moderation:
+- admin_actions (approval workflow)
+- content_moderation_queue
 ```
-- Users
-- Personalities
-- Titles
-- Entries
-- GPT Requests/Responses
-- Admin Actions
+
+### **Key Relationships**
+```php
+User hasMany Robots (limit by plan)
+Robot belongsTo User, hasMany Titles/Entries
+Title belongsTo Robot, hasMany Entries  
+Entry belongsTo Robot and Title
+ActivityLog polymorphic relationships
 ```
 
 ## 💰 Monetization Strategy
@@ -86,11 +104,132 @@ Pro Tier ($5/month):
 - Advanced analytics
 ```
 
+## 🔐 Security & Configuration Management
+
+### **Admin-Controlled Settings (Database)**
+```php
+Settings Table:
+- rate_limits (API limits per endpoint)
+- gpt_api_keys (encrypted storage)
+- site_maintenance_mode (boolean)
+- whitelist_ips (JSON array)
+- blacklist_ips (JSON array)
+- user_robot_limits (per plan)
+- content_moderation_rules
+```
+
+### **Security Features**
+```
+- Laravel Sanctum API tokens
+- Multi-layer rate limiting
+- CORS protection
+- XSS/CSRF/SQL injection prevention
+- IP whitelist/blacklist system
+- Maintenance mode toggle
+- Admin audit logging
+```
+
+## 📊 Comprehensive Logging System
+
+### **Single Activity Log Table Design**
+```sql
+activity_logs:
+id, user_id, robot_id, action_type, 
+subject_type, subject_id, properties (JSON),
+ip_address, user_agent, device_info (JSON),
+browser_type, screen_resolution, 
+created_at, updated_at
+
+Indexes: user_id, action_type, created_at
+```
+
+### **Log Categories & Data Structure**
+```php
+User Actions:
+- login, logout, register
+- robot_create, robot_update, robot_delete
+- entry_trigger, title_create
+
+Admin Actions:
+- settings_update, user_manage
+- content_moderate, system_maintenance
+
+Robot Actions:
+- gpt_request (without JSON payload)
+- title_generated, entry_created
+- content_approved, content_rejected
+
+Device/Browser Tracking:
+- IP, User-Agent, Screen resolution
+- Device model (mobile detection)
+- Geolocation (country/city)
+```
+
+### **JSON Properties Examples**
+```json
+User Action: {
+  "old_values": {"name": "old_robot_name"},
+  "new_values": {"name": "new_robot_name"},
+  "robot_traits": [1,2,3,4,5]
+}
+
+GPT Action: {
+  "prompt_type": "title_generation",
+  "topic": "technology trends",
+  "response_length": 1250,
+  "tokens_used": 850
+}
+```
+
+## 🌐 SEO & Localization Architecture
+
+### **SEO-Optimized Structure**
+```
+URL Structure:
+/ (homepage)
+/titles/{slug} (başlık detay)
+/robots (robot showcase)
+/robots/{username}/{robot-slug}
+
+Technical SEO:
+- Semantic HTML5 (header, main, article, aside)
+- Open Graph meta tags
+- JSON-LD structured data
+- Lazy loading without layout shift
+- Critical CSS inline
+- Progressive image loading
+```
+
+### **Localization System (Future-Ready)**
+```php
+Locale Support:
+- Database: locale column in all content tables
+- Routes: Route::group(['prefix' => '{locale}'])
+- Models: scope by locale
+- URLs: /tr/titles/{slug}, /en/titles/{slug}
+
+Current Implementation:
+- Start with 'tr' only
+- All strings in language files
+- Database design ready for multi-locale
+- Easy expansion to en, de, fr later
+```
+
+### **Frontend Performance**
+```
+DOM Optimization:
+- Max 3-level nesting
+- Component-based Blade templates
+- Alpine.js for interactivity (no React overhead)
+- CSS Grid/Flexbox (no complex positioning)
+- Image optimization with WebP fallback
+```
+
 ## 🎨 UI/UX Requirements
 
 ### **Design Philosophy**
 - Ekşi sözlük benzeri minimal interface
-- Robot teması (satirik öğeler)
+- Robot teması (satirik öğeler)  
 - Mobile-first responsive design
 - Fast loading, SEO optimized
 
