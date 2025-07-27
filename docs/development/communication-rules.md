@@ -26,7 +26,43 @@ Bu dosya GitHub Copilot ile çalışma kurallarını ve kısıtları belirler.
 - **✅ Conditional praise**: Sadece gerçekten iyi olduğunda "iyi" de
 - **🎯 Realistic expectations**: Abartılı beklenti yaratma
 
-## 🔒 Güvenlik Kısıtları
+## � Coding Standards
+
+### Yazılım Geliştirme Prensipleri:
+- **🏗️ SOLID Principles**: Single Responsibility, Open/Closed, Liskov, Interface Segregation, Dependency Inversion
+- **🎯 OOP Best Practices**: Encapsulation, Inheritance, Polymorphism - doğru kullanım
+- **🏛️ ACID Compliance**: Atomicity, Consistency, Isolation, Durability (database operations)
+- **🧩 Modular Architecture**: Her component bağımsız, test edilebilir olmalı
+
+### Kod Kalitesi Kuralları:
+- **🚫 Spaghetti Code Yasak**: İç içe if-else'ler, deep nesting yasak
+- **📏 Max 3 Level Nesting**: If-else, loop, function call max 3 seviye
+- **🔄 Early Return Pattern**: Guard clauses kullan, nested kod azalt
+- **📦 Single Responsibility**: Her function/class tek sorumluluğa sahip olmalı
+- **🏷️ Meaningful Names**: Variable, function, class isimleri açıklayıcı olmalı
+
+### Code Review Standartları:
+- **🔍 Her değişiklik**: SOLID'e uygun mu kontrol et
+- **⚠️ Technical Debt**: Spagetti kod görünce refactor öner
+- **📊 Metrics**: Cyclomatic complexity yüksekse böl
+- **🧪 Testability**: Her function unit test yazılabilir olmalı
+
+### Anti-Pattern'ler (YASAK):
+- ❌ **God Classes**: Tek class'ta çok sorumluluk
+- ❌ **Long Parameter Lists**: 3'ten fazla parametre
+- ❌ **Deep Nesting**: 3'ten fazla seviye iç içe kod
+- ❌ **Magic Numbers**: Hard-coded sayılar (constants kullan)
+- ❌ **Copy-Paste Code**: DRY principle'ını ihlal
+- ❌ **Tight Coupling**: Bağımlılıkları minimize et
+
+### Design Pattern Tercihleri:
+- **✅ Repository Pattern**: Database abstraction için
+- **✅ Factory Pattern**: Object creation için
+- **✅ Strategy Pattern**: Değişken algoritmalar için
+- **✅ Observer Pattern**: Event handling için
+- **✅ Dependency Injection**: Loose coupling için
+
+## �🔒 Güvenlik Kısıtları
 
 ### Onay Gerektiren İşlemler:
 - **Dosya/klasör silme**: Mutlaka önceden onay al
@@ -59,9 +95,9 @@ Devam etmek istiyor musun? (evet/hayır)
 ## 🎯 Çalışma Alanı
 
 ### Aktif Repository:
-- **Current**: `tufan-kutlu/Robodict_AI_Test`
-- **Path**: `c:\Users\tufan\Documents\Projects\Robodict_AITEST`
-- **Branch**: `master`
+- **Current**: `tufan-kutlu/Robodict2`
+- **Path**: `c:\Users\tufan\Documents\Projects\Robodict2`
+- **Branch**: `develop`
 
 ### Kısıtlar:
 - Bu repo dışındaki hiçbir repo'ya müdahale etme
@@ -77,5 +113,5 @@ Bu dosya gerektiğinde güncellenebilir. Yeni kural eklendiğinde:
 
 ---
 
-**Son güncelleme**: 24 Temmuz 2025
-**Geçerli session**: Tüm AI etkileşimleri için
+**Son güncelleme**: 27 Temmuz 2025
+**Geçerli session**: Tüm AI etkileşimleri için - Coding standards eklendi
