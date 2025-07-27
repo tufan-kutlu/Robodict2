@@ -17,32 +17,51 @@
 
 ## 🚀 Immediate Roadmap (Next 3-5 Steps)
 
-### **Step 1: Project Setup**
-- [ ] Laravel kurulumu (Composer)
-- [ ] Basic project structure
-- [ ] Environment configuration
-- [ ] Database connection
+### **Phase 1: Foundation Setup**
+- [ ] **TASK-001**: Laravel kurulumu (Composer install)
+- [ ] **TASK-002**: Basic project structure + .env setup
+- [ ] **TASK-003**: Database connection test
+- [ ] **TASK-004**: Git feature branch oluştur (`feature/laravel-setup`)
 
-### **Step 2: Database Design**
-- [ ] Migration files (Users, Writers, Personalities, Titles, Entries, Locales)
-- [ ] Model relationships with locale support
-- [ ] Seeders for test data (TR locale initially)
-- [ ] Role-based permissions schema
+### **Phase 2: Core Database & Models**
+- [ ] **TASK-005**: Users migration + model (with locale support)
+- [ ] **TASK-006**: Robots migration + model + relationships
+- [ ] **TASK-007**: Basic seeders (test data)
+- [ ] **TASK-008**: Model relationships test (Unit tests)
 
-### **Step 3: Authentication Foundation**
-- [ ] Laravel Breeze/UI kurulumu
-- [ ] "Ben robotum" captcha implementation
-- [ ] User registration/login
+### **Phase 3: Authentication Foundation**  
+- [ ] **TASK-009**: Laravel Breeze kurulumu
+- [ ] **TASK-010**: "Ben robotum" captcha implementation
+- [ ] **TASK-011**: User/Admin role middleware
+- [ ] **TASK-012**: Basic admin panel route structure
 
-### **Step 4: Core Models**
-- [ ] User model extensions
-- [ ] Personality system (5 basic traits)
-- [ ] Title and Entry models
+### **Phase 4: Robot Management System**
+- [ ] **TASK-013**: Robot CRUD operations (backend)
+- [ ] **TASK-014**: Personality traits system (5 basic traits)
+- [ ] **TASK-015**: User dashboard (robot management)
+- [ ] **TASK-016**: Robot personality form (frontend)
 
-### **Step 5: Admin Panel Basics**
-- [ ] Admin middleware
-- [ ] Title management interface
-- [ ] Entry approval workflow
+### **Phase 5: Admin Panel Basics**
+- [ ] **TASK-017**: Admin dashboard layout
+- [ ] **TASK-018**: Site settings CRUD (database-driven)
+- [ ] **TASK-019**: User management interface
+- [ ] **TASK-020**: Basic logging system setup
+
+## 📋 **Current Active Task**
+🔄 **TASK-001**: Laravel kurulumu
+- **Branch**: `feature/laravel-setup`
+- **Status**: Ready to start
+- **Dependencies**: Composer installed on system
+- **Definition of Done**: `php artisan serve` çalışıyor, welcome page görünüyor
+
+## ✅ **Completed Tasks**
+*(Her tamamlanan task buraya taşınacak)*
+
+## 🎯 **Task Management Rules**
+- Her task kendi feature branch'inde
+- Task tamamlandığında develop'a PR
+- Her task 1-2 saatlik iş yükü
+- Blocklayıcı problem varsa task güncellenir
 
 ## 🎯 Waiting For
 - **Jira task assignment** → Sen branch adı/task detayı vereceksin
