@@ -25,6 +25,8 @@ Bu dosya GitHub Copilot ile çalışma kurallarını ve kısıtları belirler.
 - **⚖️ Risk assessment**: Riskleri açıkça belirt
 - **✅ Conditional praise**: Sadece gerçekten iyi olduğunda "iyi" de
 - **🎯 Realistic expectations**: Abartılı beklenti yaratma
+- **🔍 Tedbirli değerlendirme**: Her çözümde potansiyel sorunları analiz et
+- **⚠️ Destekleyici değil, gerçekçi**: Motivasyon vermek yerine faktual değerlendirme yap
 
 ## � Coding Standards
 
@@ -105,6 +107,13 @@ Devam etmek istiyor musun? (evet/hayır)
 - **Git Branch**: `feature/ROBO-XXX_description` (Jira task number kullanılır)
 - **Yeni Branch**: Her yeni branch için Jira task numarasını kullanıcıdan sor
 
+### Git Branching Kuralları:
+- **❌ `-u` upstream flag yasak**: Branch'leri upstream olarak set etme
+- **✅ Simple push**: `git push origin branch-name` kullan
+- **🔄 Manual tracking**: Her push'ta branch adını belirt
+- **⚠️ Upstream risk**: Yanlış default branch ile conflict'leri önlemek için
+- **📋 PR workflow**: Push sonrası GitHub UI'dan PR oluştur
+
 ### Kısıtlar:
 - Bu repo dışındaki hiçbir repo'ya müdahale etme
 - Git komutları sadece bu dizin içinde çalışsın
@@ -119,5 +128,5 @@ Bu dosya gerektiğinde güncellenebilir. Yeni kural eklendiğinde:
 
 ---
 
-**Son güncelleme**: 27 Temmuz 2025
-**Geçerli session**: Tüm AI etkileşimleri için - Coding standards eklendi
+**Son güncelleme**: 29 Temmuz 2025
+**Geçerli session**: Tüm AI etkileşimleri için - Coding standards eklendi, Git branching kuralları eklendi, Gerçekçilik standardı güçlendirildi
