@@ -48,41 +48,44 @@
 ### **Phase 2: Database Foundation** (Schema First)
 - [x] **TASK-005**: Users migration + model (locale, plan_type, robot_limits) ✅ COMPLETED (ROBO-3)
 - [x] **TASK-006**: Robots migration + enhanced model + relationships ✅ COMPLETED (ROBO-4)
-- [x] **TASK-007**: Titles + Entries migrations (content tables) ✅ COMPLETED (ROBO-5)
-- [ ] **TASK-008**: Site settings + personality traits tables
 
-### **Phase 3: Write Operations (Admin Panel)**
-- [ ] **TASK-009**: Basic authentication + admin middleware
-- [ ] **TASK-010**: Admin panel layout + routing structure
-- [ ] **TASK-011**: Site settings CRUD (database-driven config)
-- [ ] **TASK-012**: Robot/Persona management interface
+- [ ] **TASK-007**: Basic seeders (test data) ❌ NOT STARTED
+- [ ] **TASK-008**: Model relationships test (Unit tests) ❌ NOT STARTED
 
-### **Phase 4: GPT Integration (Content Generation)**
-- [ ] **TASK-013**: GPT API integration (OpenAI client)
-- [ ] **TASK-014**: Title generation system (Admin → GPT → DB)
-- [ ] **TASK-015**: Entry generation system (Title + Persona → GPT → DB)
-- [ ] **TASK-016**: Content approval workflow
+**BONUS Completed:**
+- [x] **ROBO-5**: Title + Entry models with relationships ✅ COMPLETED (Extra work)
 
-### **Phase 5: Read Operations (Backend Logic)**
-- [ ] **TASK-017**: Entry/Title retrieval APIs
-- [ ] **TASK-018**: Content filtering + search logic
-- [ ] **TASK-019**: User management backend
-- [ ] **TASK-020**: Basic seeders (test data with real content)
+### **Phase 3: Authentication Foundation**  
+- [ ] **TASK-009**: Laravel Breeze kurulumu
+- [ ] **TASK-010**: "Ben robotum" captcha implementation
+- [ ] **TASK-011**: User/Admin role middleware
+- [ ] **TASK-012**: Basic admin panel route structure
 
-### **Phase 6: Frontend & Public Interface**
-- [ ] **TASK-021**: Public homepage + entry browsing
-- [ ] **TASK-022**: Responsive design + mobile optimization
-- [ ] **TASK-023**: SEO optimization + meta tags
-- [ ] **TASK-024**: User registration + profile management
+### **Phase 4: Robot Management System**
+- [ ] **TASK-013**: Robot CRUD operations (backend)
+- [ ] **TASK-014**: Personality traits system (5 basic traits)
+- [ ] **TASK-015**: User dashboard (robot management)
+- [ ] **TASK-016**: Robot personality form (frontend)
+
+### **Phase 5: Admin Panel Basics**
+- [ ] **TASK-017**: Admin dashboard layout
+- [ ] **TASK-018**: Site settings CRUD (database-driven)
+- [ ] **TASK-019**: User management interface
+- [ ] **TASK-020**: Basic logging system setup
 
 ## 📋 **Current Active Task**
-✅ **ROBO-5**: Title and Entry models with relationships ✅ COMPLETED 
-- **Branch**: `feature/ROBO-5_titles-entries-migrations` 
-- **Status**: Ready for PR
-- **Dependencies**: Robot model (✅ ROBO-4 completed)
-- **Definition of Done**: Title and Entry models created with full relationship system
+🔄 **ROBO-6**: TASK-007 + TASK-008 (Basic Seeders + Model Relationship Tests)
+- **Branch**: `feature/ROBO-6_seeders-and-tests` 
+- **Status**: Ready to start
+- **Dependencies**: Title/Entry models (✅ ROBO-5 completed)
+- **Definition of Done**: Test data seeders + unit tests for all model relationships
 
-**Next Ready:** ROBO-6 for TASK-008 (Site settings + personality traits tables)
+**Components:**
+- Create factories for User/Robot/Title/Entry with realistic data
+- Create database seeder with 5 users, 10 robots, 20 titles, 50 entries
+- Write unit tests for all model relationships (User→Robot→Title→Entry)
+- Test seeder works with `php artisan db:seed`
+- Test relationships work with `php artisan test`
 
 ## ✅ **Completed Tasks**
 - ✅ **TASK-001**: Laravel kurulumu (Composer install) - 28 Jan 2025
