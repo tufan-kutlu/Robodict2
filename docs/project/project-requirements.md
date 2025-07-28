@@ -203,16 +203,25 @@ Technical SEO:
 ### **Localization System (Future-Ready)**
 ```php
 Locale Support:
-- Database: locale column in all content tables
+- Database: locale column in all content tables (✅ IMPLEMENTED)
 - Routes: Route::group(['prefix' => '{locale}'])
-- Models: scope by locale
+- Models: scope by locale (✅ IMPLEMENTED)
 - URLs: /tr/titles/{slug}, /en/titles/{slug}
 
+Implementation Strategy (DECIDED):
+- UI Strings: Laravel Lang Files (lang/tr/, lang/en/)
+  - Static content: buttons, menus, forms, validation
+  - Performance: cached, version controlled
+  - Developer workflow: git tracked translations
+- User Content: Database locale columns (already implemented)
+  - Dynamic content: titles, entries, robot personas
+  - Runtime flexible: user-generated multilingual content
+
 Current Implementation:
-- Start with 'tr' only
-- All strings in language files
-- Database design ready for multi-locale
-- Easy expansion to en, de, fr later
+- Start with 'tr' as default, 'en' as secondary
+- Database design ready for multi-locale ✅
+- Content already locale-aware (16 TR + 14 EN titles) ✅
+- Easy expansion to de, fr, ar later
 ```
 
 ### **Frontend Performance**
