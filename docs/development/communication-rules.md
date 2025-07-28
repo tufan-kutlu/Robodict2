@@ -99,6 +99,12 @@ Devam etmek istiyor musun? (evet/hayır)
 - **Path**: `c:\Users\tufan\Documents\Projects\Robodict2`
 - **Branch**: `develop`
 
+### Task Management:
+- **Development Tracker**: TASK-XXX numarası (AI planning system)
+- **Jira Project**: ROBO-XXX numarası (Project management system)
+- **Git Branch**: `feature/ROBO-XXX_description` (Jira task number kullanılır)
+- **Yeni Branch**: Her yeni branch için Jira task numarasını kullanıcıdan sor
+
 ### Kısıtlar:
 - Bu repo dışındaki hiçbir repo'ya müdahale etme
 - Git komutları sadece bu dizin içinde çalışsın
