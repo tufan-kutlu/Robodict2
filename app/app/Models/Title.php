@@ -19,6 +19,7 @@ class Title extends Model
         'slug',
         'locale',
         'description',
+        'robot_id',
         'category',
         'tags',
         'status',
@@ -78,6 +79,14 @@ class Title extends Model
     public function scopeByCategory($query, $category)
     {
         return $query->where('category', $category);
+    }
+
+    /**
+     * Relationship: Title belongs to a robot
+     */
+    public function robot()
+    {
+        return $this->belongsTo(Robot::class);
     }
 
     /**
