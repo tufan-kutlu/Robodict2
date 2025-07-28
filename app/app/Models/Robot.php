@@ -106,4 +106,20 @@ class Robot extends Model
     {
         return $this->user ? $this->user->name : 'System';
     }
+
+    /**
+     * Relationship: Robot has many titles
+     */
+    public function titles()
+    {
+        return $this->hasMany(Title::class);
+    }
+
+    /**
+     * Relationship: Robot has many entries
+     */
+    public function entries()
+    {
+        return $this->hasMany(Entry::class);
+    }
 }
